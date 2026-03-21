@@ -1,17 +1,402 @@
 ---
 
 ---
+import '../styles/global.css'
+---
 
-<html lang="en">
+<html class="dark" lang="es-VE">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta charset="utf-8"/>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+		<title>Flashy - Puerto Cabello</title>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+		<script id="tailwind-config">
+			tailwind.config = {
+				darkMode: "class",
+				theme: {
+					extend: {
+						colors: {
+							"surface-tint": "#ff915a",
+							"primary-fixed-dim": "#f76600",
+							"inverse-primary": "#a24100",
+							"surface-dim": "#0c0e0f",
+							"surface-variant": "#232628",
+							"secondary-fixed-dim": "#cad5ed",
+							"primary-fixed": "#ff7a31",
+							"on-tertiary-fixed-variant": "#604100",
+							"surface-container": "#171a1b",
+							"error-dim": "#d53d18",
+							"tertiary-fixed-dim": "#efa914",
+							"outline": "#747577",
+							"tertiary-container": "#ffb627",
+							"tertiary-fixed": "#ffb627",
+							"on-secondary": "#475266",
+							"primary-dim": "#ff7526",
+							"surface-container-low": "#111415",
+							"on-error-container": "#ffd2c8",
+							"surface-container-highest": "#232628",
+							"on-secondary-fixed-variant": "#515c70",
+							"surface-container-high": "#1d2021",
+							"error": "#ff7351",
+							"on-secondary-container": "#c5d1e8",
+							"on-primary": "#531e00",
+							"secondary-container": "#3c475a",
+							"primary-container": "#ff7a31",
+							"surface-container-lowest": "#000000",
+							"on-surface": "#f6f6f7",
+							"tertiary-dim": "#efa914",
+							"secondary-dim": "#cad5ed",
+							"background": "#0c0e0f",
+							"outline-variant": "#464849",
+							"on-primary-fixed": "#000000",
+							"tertiary": "#ffc96f",
+							"secondary": "#d8e3fb",
+							"secondary-fixed": "#d8e3fb",
+							"inverse-surface": "#f9f9fa",
+							"on-tertiary-fixed": "#3a2600",
+							"on-secondary-fixed": "#354053",
+							"on-tertiary": "#614100",
+							"error-container": "#b92902",
+							"on-error": "#450900",
+							"surface-bright": "#292d2e",
+							"primary": "#ff915a",
+							"on-surface-variant": "#aaabac",
+							"surface": "#0c0e0f",
+							"on-tertiary-container": "#553900",
+							"on-background": "#f6f6f7",
+							"inverse-on-surface": "#545556",
+							"on-primary-fixed-variant": "#501c00",
+							"on-primary-container": "#411500"
+						},
+						fontFamily: {
+							"headline": ["Space Grotesk"],
+							"body": ["Manrope"],
+							"label": ["Manrope"]
+						},
+						borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+					},
+				},
+			}
+		</script>
+		<style>
+			.material-symbols-outlined {
+				font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+			}
+			.glow-badge {
+				box-shadow: 0 0 20px rgba(255, 145, 90, 0.4);
+			}
+			.bento-card:hover {
+				background-color: #232628;
+				transform: translateY(-4px);
+				transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+		</style>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+		<!-- TopNavBar -->
+		<nav class="fixed top-0 w-full z-50 bg-[#0c0e0f]/80 backdrop-blur-md no-border bg-gradient-to-b from-[#0c0e0f] to-transparent shadow-[0_4px_30px_rgba(255,145,90,0.05)]">
+			<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+				<div class="text-2xl font-black italic tracking-tighter text-[#f6f6f7]">FLASHY</div>
+				<div class="hidden md:flex items-center gap-8">
+					<a class="font-['Space_Grotesk'] tracking-tight text-sm font-bold uppercase text-[#ff915a] border-b-2 border-[#ff915a] pb-1" href="#">Puerto Cabello</a>
+					<a class="font-['Space_Grotesk'] tracking-tight text-sm font-bold uppercase text-[#aaabac] hover:text-[#f6f6f7] transition-colors" href="#features">Features</a>
+					<a class="font-['Space_Grotesk'] tracking-tight text-sm font-bold uppercase text-[#aaabac] hover:text-[#f6f6f7] transition-colors" href="#waitlist">Waitlist</a>
+				</div>
+				<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-bold py-2.5 px-6 rounded-lg uppercase tracking-wider text-xs active:scale-95 transform transition-transform duration-200 hover:opacity-80">
+					Get Priority Access
+				</button>
+			</div>
+		</nav>
+
+		<!-- Hero Section -->
+		<section class="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 px-6 overflow-hidden">
+			<!-- Radial Background -->
+			<div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,_#23170f_0%,_#151718_100%)]"></div>
+			<!-- Neon Trail Decoration -->
+			<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-20 blur-sm rotate-12"></div>
+			<div class="relative z-10 max-w-5xl mx-auto text-center">
+				<!-- Floating Badge -->
+				<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-highest border border-primary/20 glow-badge mb-8">
+					<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">location_on</span>
+					<span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-[0.1em] uppercase text-primary">Lanzamiento Exclusivo: Solo en Puerto Cabello</span>
+				</div>
+				<h1 class="font-headline text-5xl md:text-7xl font-black tracking-tighter text-on-surface mb-6 leading-[1.1] md:leading-[1.05]">
+					Puerto Cabello, el futuro de tu <span class="text-primary italic">movilidad</span> llegó.
+				</h1>
+				<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-3xl mx-auto mb-12">
+					Flashy: Más rápido, más seguro, más tuyo. La revolución del transporte diseñada para la costa carabobeña.
+				</p>
+				<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+					<a class="w-full sm:w-auto px-10 py-4 bg-gradient-to-br from-primary to-primary-container rounded-lg font-headline font-black text-on-primary text-lg uppercase tracking-widest hover:shadow-[0_0_30px_rgba(255,145,90,0.3)] transition-all" href="#waitlist">
+						Únete a la Fase 1
+					</a>
+					<a class="w-full sm:w-auto px-10 py-4 border border-outline-variant/30 rounded-lg font-headline font-bold text-on-surface text-lg uppercase tracking-widest hover:bg-surface-variant transition-all" href="#features">
+						Explorar Features
+					</a>
+				</div>
+			</div>
+			<!-- Scroll Indicator -->
+			<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+				<span class="material-symbols-outlined text-on-surface-variant opacity-40">keyboard_double_arrow_down</span>
+			</div>
+		</section>
+
+		<!-- Services Section -->
+		<section class="py-24 px-6 bg-surface-container-low">
+			<div class="max-w-7xl mx-auto">
+				<div class="mb-16">
+					<h2 class="font-headline text-3xl font-bold uppercase tracking-tight text-on-surface mb-2">Servicios Flashy</h2>
+					<div class="w-16 h-1 bg-primary"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<!-- Service 1 -->
+					<div class="group relative overflow-hidden rounded-xl bg-surface-container h-[450px]">
+						<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="Close up of a motorcycle engine in dark lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDm71nrUa2vQRyENWRYZu--_lQbMCJpx-hp7h4AuRfgunf8Ds-mYivVqQE7Ie597u3IGFvt3rPmHLDSwqj9RZZclziFChjetUEFJZW8HR3R6SoUwLEDlqGBOC87sjEEdkd79Mlm4i6JworTMRpkKFBCdNKQnTIORoxkJFONOef5Jv-MjV5bfgqcHid4uBvGotmdDeL0ZD2evvwXSnURup2fBdMXMbuxa2tfKNHcqVbMIyGa5cJedchtAVCQ0vjIxheTFmlWgUvq7I"/>
+						<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div>
+						<div class="absolute bottom-0 p-8">
+							<span class="material-symbols-outlined text-primary text-4xl mb-4">two_wheeler</span>
+							<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Viaje (MotoTaxi)</h3>
+							<p class="text-on-surface-variant">Llega a tiempo sin importar el tráfico. La forma más rápida de cruzar la ciudad.</p>
+						</div>
+					</div>
+					<!-- Service 2 -->
+					<div class="group relative overflow-hidden rounded-xl bg-surface-container h-[450px]">
+						<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="Courier delivering a package on a bike" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIaQpS3VmJeD9Yvb3GKy0s0f7O1WZvb32QOQalFPuPj7kHWuovoKrIF5fgXPHBJBOGNAManev_S67488qADKjm2Nlwd_b6imQdTTAjmt1ZhXB-xHhvkgYCeEh1eLHPhbFeAMDHJWKUqz9juyAJ_32iRFYiNTSD9WDuopc8n2Yje_M-TDqfvXCBC5tUlbwu5iMXRBZ7Kfy4UBwt8865YmU-KNC02tQNk6mkRYBaCVdot7ML2dId8tuQHM05K6z_UmE3BLudV-A09NI"/>
+						<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div>
+						<div class="absolute bottom-0 p-8">
+							<span class="material-symbols-outlined text-primary text-4xl mb-4">local_shipping</span>
+							<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Envío (Encomiendas)</h3>
+							<p class="text-on-surface-variant">Tus paquetes volando por la ciudad. Seguridad y rapidez en cada entrega.</p>
+						</div>
+					</div>
+					<!-- Service 3 -->
+					<div class="group relative overflow-hidden rounded-xl bg-surface-container h-[450px]">
+						<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="Modern delivery concept abstract image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfdPhbsA3bEax30tCNIvI-s1YMTri7sePOKwj77TMxZf5_OOtJMbJz4CI7_Yq_MxwVJS3xg4t31LVDtprhpaTHGqMnJLz_nTKEMhkTihG5jcHB4B4NMmKT9Q7ZmC5hO5ALYEL78OlTFrTsmGB4wCwj1zK1mLjEWTtfDfF5U7rbqaloC-wS3aBoeQPRquUJGHS2uhcjxwjT2OD5dwei6vDkA8EbWJHXyr1IsKAJtO5BT0EV5iitUxGO4nyRnV8t6suAyyv979uY7fs"/>
+						<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div>
+						<div class="absolute bottom-0 p-8">
+							<span class="material-symbols-outlined text-primary text-4xl mb-4">shopping_basket</span>
+							<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Lo que sea</h3>
+							<p class="text-on-surface-variant">Si cabe en una moto, Flashy lo lleva por ti. Mandados, comida o lo que necesites.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Bento Grid Features -->
+		<section class="py-24 px-6 bg-surface overflow-hidden" id="features">
+			<div class="max-w-7xl mx-auto">
+				<div class="mb-16 text-center md:text-left">
+					<h2 class="font-headline text-4xl font-black uppercase tracking-tighter text-on-surface mb-4">10 Killer Features</h2>
+					<p class="text-on-surface-variant font-body max-w-xl">La tecnología más avanzada de Venezuela, ahora en tus manos.</p>
+				</div>
+				<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+					<!-- Card 1: Offline Mode -->
+					<div class="bento-card col-span-2 row-span-2 p-8 rounded-xl bg-surface-container border border-outline-variant/10 flex flex-col justify-between">
+						<div>
+							<span class="material-symbols-outlined text-primary text-5xl mb-6">signal_cellular_off</span>
+							<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Modo Offline (SMS)</h3>
+							<p class="text-on-surface-variant text-sm">¿Sin datos? No hay problema. Pide tu Flashy vía SMS con nuestra integración satelital.</p>
+						</div>
+						<div class="mt-8 text-xs font-black text-primary tracking-widest uppercase">Tecnología Patentada</div>
+					</div>
+					<!-- Card 2: Multi-Pago Split -->
+					<div class="bento-card col-span-2 p-6 rounded-xl bg-surface-container border border-outline-variant/10">
+						<span class="material-symbols-outlined text-primary mb-4">account_balance_wallet</span>
+						<h3 class="font-headline text-xl font-bold text-on-surface mb-2">Multi-Pago Split</h3>
+						<p class="text-on-surface-variant text-xs">No cargues efectivo, divide tu pago con nuestra billetera híbrida y Pago Móvil.</p>
+					</div>
+					<!-- Card 3: Círculo de Confianza -->
+					<div class="bento-card p-6 rounded-xl bg-surface-container border border-outline-variant/10">
+						<span class="material-symbols-outlined text-primary mb-4">verified_user</span>
+						<h3 class="font-headline text-lg font-bold text-on-surface mb-1 leading-tight">Círculo de Confianza</h3>
+						<p class="text-on-surface-variant text-[11px]">Comparte tu ruta en tiempo real con 5 contactos clave.</p>
+					</div>
+					<!-- Card 4: Taxímetro GPS -->
+					<div class="bento-card p-6 rounded-xl bg-surface-container border border-outline-variant/10">
+						<span class="material-symbols-outlined text-primary mb-4">speed</span>
+						<h3 class="font-headline text-lg font-bold text-on-surface mb-1 leading-tight">Taxímetro GPS</h3>
+						<p class="text-on-surface-variant text-[11px]">Precios justos calculados al metro. Sin sorpresas al final.</p>
+					</div>
+					<!-- Card 5: Subastas -->
+					<div class="bento-card col-span-2 p-6 rounded-xl bg-surface-container border border-outline-variant/10 flex items-center gap-6">
+						<span class="material-symbols-outlined text-primary text-4xl">gavel</span>
+						<div>
+							<h3 class="font-headline text-xl font-bold text-on-surface mb-1">Subastas en Vivo</h3>
+							<p class="text-on-surface-variant text-xs">Tú propones el precio, los conductores aceptan. El mercado en tus manos.</p>
+						</div>
+					</div>
+					<!-- Card 6: Geofencing -->
+					<div class="bento-card p-6 rounded-xl bg-surface-container border border-outline-variant/10">
+						<span class="material-symbols-outlined text-primary mb-4">fence</span>
+						<h3 class="font-headline text-lg font-bold text-on-surface mb-1 leading-tight">Geofencing</h3>
+						<p class="text-on-surface-variant text-[11px]">Zonas de seguridad activa monitoreadas 24/7 en Puerto Cabello.</p>
+					</div>
+					<!-- Card 7: OTP -->
+					<div class="bento-card p-6 rounded-xl bg-surface-container border border-outline-variant/10">
+						<span class="material-symbols-outlined text-primary mb-4">password</span>
+						<h3 class="font-headline text-lg font-bold text-on-surface mb-1 leading-tight">Validación OTP</h3>
+						<p class="text-on-surface-variant text-[11px]">Nunca te subas a la moto equivocada. Código único por viaje.</p>
+					</div>
+					<!-- Card 8: Recurrentes -->
+					<div class="bento-card p-6 rounded-xl bg-surface-container border border-outline-variant/10">
+						<span class="material-symbols-outlined text-primary mb-4">event_repeat</span>
+						<h3 class="font-headline text-lg font-bold text-on-surface mb-1 leading-tight">Viajes Recurrentes</h3>
+						<p class="text-on-surface-variant text-[11px]">Programa tu ida al trabajo o universidad automáticamente.</p>
+					</div>
+					<!-- Card 9: Waze de Huecos -->
+					<div class="bento-card p-6 rounded-xl bg-surface-container border border-outline-variant/10">
+						<span class="material-symbols-outlined text-primary mb-4">warning</span>
+						<h3 class="font-headline text-lg font-bold text-on-surface mb-1 leading-tight">Waze de Huecos</h3>
+						<p class="text-on-surface-variant text-[11px]">Reportes comunitarios de baches para rutas más fluidas.</p>
+					</div>
+					<!-- Card 10: SOS Mecánico -->
+					<div class="bento-card col-span-2 p-6 rounded-xl bg-surface-container border border-outline-variant/10 bg-gradient-to-br from-surface-container to-primary/5">
+						<span class="material-symbols-outlined text-primary mb-4">build_circle</span>
+						<h3 class="font-headline text-xl font-bold text-on-surface mb-2">SOS Mecánico</h3>
+						<p class="text-on-surface-variant text-xs">¿Se accidentó tu moto personal? Pide asistencia o remolque Flashy en segundos.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Pre-registro Form Section -->
+		<section class="py-24 px-6 bg-surface-container-low relative overflow-hidden" id="waitlist">
+			<div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+			<div class="max-w-4xl mx-auto">
+				<div class="bg-[#1e293b] border border-[#334155] rounded-2xl p-8 md:p-12 shadow-2xl relative z-10">
+					<div class="flex flex-col md:flex-row gap-12 items-center">
+						<div class="flex-1 text-center md:text-left">
+							<h2 class="font-headline text-4xl font-black text-on-surface mb-4">Acceso Prioritario</h2>
+							<p class="text-on-secondary-container mb-8">Únete a la lista de espera exclusiva de Puerto Cabello y obtén 50% de descuento en tus primeros 10 viajes.</p>
+							<div class="flex items-center gap-4 justify-center md:justify-start">
+								<div class="flex -space-x-3">
+									<img class="w-10 h-10 rounded-full border-2 border-[#1e293b]" data-alt="User avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCStYh2L1fzXriYfQyFu5bfFtH9O9x4Yu-UScUOADXToe0CwV1wfphtVVjcTKY5_VPs8sxawsEMWSlejgrGGcXFMtubF70WKnZuO10BqyrVFAgF2Jgk4Zq5tuJTWcuBnsqw-yX7LuNFrBjRh4kvqSKzS0Goh3k_8lblDRtocVNB5CEjRluIs7xgUSlkCQUIN2cHu56WYsFzkGwI0SxgfByTZZikmgT9XgLebuDLwJquy7T5mrXB6_ZtTw7pqk8PeVRXWS8dPudPI1A"/>
+									<img class="w-10 h-10 rounded-full border-2 border-[#1e293b]" data-alt="User avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMObRluYInF1gvaE7cxdCoe1m5fz3ScOLM1xlWtGN0iY1iel_oZOyXo23vOO6dHhDvYUtqKa9NJIijb4tKhkxKVg4oCMtiCyX1FyvT0UYS1b11s3F1NVLyLeORPCbahi2Nx_lnh6vZENgb9e32-CbmsVOH64OVuE8o6-zpShRyVTr15FyhyFW8O8OALAAAF-UJBGe3-i6PSCOsI7TSbppSZVd-j8ChDM9xIhUIEofe1RFj51njiOOHGq4Dl25fcC_QmJgj9cfI7c8"/>
+									<img class="w-10 h-10 rounded-full border-2 border-[#1e293b]" data-alt="User avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVD2OOx3qsO_T7D5Qbbiv8gtINAkrrMqPoIMwsSNFL-NWwGgY4NLS38EtBb75A9eBd6BUTFAHN-Kn4mbLC3Yl25ssrTaUrXIn2tH_I4Qm1EVQdGeETySWlQ9K9iETZ-mCfZV114KC-L76DnqiHzYglE6-id5bW1B3s3vaXccOKLjBHlwkiHkfi_6xbAbRzifTTYDpxkRAo0Ml9HDHIc4D11JK8fFUTns2_43C_1Y9-tZWvOv2G3_QSHDFFTiUHu8ztmS8zo8bxn9M"/>
+								</div>
+								<span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">+2,400 ya registrados</span>
+							</div>
+						</div>
+						<form class="flex-1 w-full space-y-4" id="waitlist-form">
+							<div class="grid grid-cols-2 gap-4">
+								<div class="space-y-1">
+									<label class="text-[10px] uppercase font-black text-primary tracking-widest px-1">Estado</label>
+									<input class="w-full bg-surface-container-high border-none rounded-lg text-on-surface-variant font-bold px-4 py-3 opacity-60" disabled type="text" value="Carabobo"/>
+								</div>
+								<div class="space-y-1">
+									<label class="text-[10px] uppercase font-black text-primary tracking-widest px-1">Ciudad</label>
+									<input class="w-full bg-surface-container-high border-none rounded-lg text-on-surface-variant font-bold px-4 py-3 opacity-60" disabled type="text" value="Puerto Cabello"/>
+								</div>
+							</div>
+							<div class="space-y-1">
+								<label class="text-[10px] uppercase font-black text-primary tracking-widest px-1">Teléfono</label>
+								<input class="w-full bg-surface-container-high border-none focus:ring-2 focus:ring-primary/30 rounded-lg text-on-surface px-4 py-3 placeholder:text-on-surface-variant/30" placeholder="0412-0000000" type="tel" id="phone" required/>
+							</div>
+							<div class="space-y-1">
+								<label class="text-[10px] uppercase font-black text-primary tracking-widest px-1">Correo Electrónico</label>
+								<input class="w-full bg-surface-container-high border-none focus:ring-2 focus:ring-primary/30 rounded-lg text-on-surface px-4 py-3 placeholder:text-on-surface-variant/30" placeholder="nombre@flashy.com" type="email" id="email" required/>
+							</div>
+							<button class="w-full mt-4 py-4 bg-[#ff6a00] hover:bg-primary text-on-primary font-headline font-black text-lg uppercase tracking-widest rounded-lg transition-all transform active:scale-[0.98] shadow-lg shadow-primary/20" type="submit">
+								Asegurar mi puesto
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="bg-[#0c0e0f] w-full py-12 px-6 border-t border-[#464849]/15">
+			<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+				<div class="text-lg font-bold text-[#f6f6f7]">FLASHY</div>
+				<div class="flex flex-wrap justify-center gap-6">
+					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="#">Phase 1 Roadmap</a>
+					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="#">Privacy Policy</a>
+					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="#">Terms of Service</a>
+					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="#">Driver Portal</a>
+				</div>
+				<p class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] text-center md:text-right">
+					2024 FLASHY VENEZUELA. KINETIC PRECISION ENGINEERED.
+				</p>
+			</div>
+		</footer>
+
+		<script>
+			// Smooth scrolling for navigation links
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault();
+					const target = document.querySelector(this.getAttribute('href'));
+					if (target) {
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				});
+			});
+
+			// Form submission handler
+			document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+				e.preventDefault();
+				
+				const phone = document.getElementById('phone').value;
+				const email = document.getElementById('email').value;
+				
+				if (phone && email) {
+					// Show success message
+					const button = this.querySelector('button[type="submit"]');
+					const originalText = button.textContent;
+					button.textContent = '¡Registrado con éxito!';
+					button.classList.add('bg-green-600');
+					
+					// Reset form after 3 seconds
+					setTimeout(() => {
+						this.reset();
+						button.textContent = originalText;
+						button.classList.remove('bg-green-600');
+					}, 3000);
+					
+					// Here you would normally send the data to your backend
+					console.log('Registration:', { phone, email, state: 'Carabobo', city: 'Puerto Cabello' });
+				}
+			});
+
+			// Add parallax effect to hero section on scroll
+			window.addEventListener('scroll', () => {
+				const scrolled = window.pageYOffset;
+				const parallax = document.querySelector('.bg-[radial-gradient(circle_at_center,_#23170f_0%,_#151718_100%)]');
+				if (parallax) {
+					parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+				}
+			});
+
+			// Add entrance animations for elements as they come into view
+			const observerOptions = {
+				threshold: 0.1,
+				rootMargin: '0px 0px -50px 0px'
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.style.opacity = '1';
+						entry.target.style.transform = 'translateY(0)';
+					}
+				});
+			}, observerOptions);
+
+			// Observe all bento cards and service cards
+			document.querySelectorAll('.bento-card, .group').forEach(el => {
+				el.style.opacity = '0';
+				el.style.transform = 'translateY(20px)';
+				el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+				observer.observe(el);
+			});
+		</script>
 	</body>
 </html>
