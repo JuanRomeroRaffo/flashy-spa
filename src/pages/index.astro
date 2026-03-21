@@ -1,6 +1,7 @@
 ---
-
+import ContactForm from '../components/ContactForm.jsx';
 ---
+
 import '../styles/global.css'
 ---
 
@@ -281,29 +282,7 @@ import '../styles/global.css'
 								<span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">+2,400 ya registrados</span>
 							</div>
 						</div>
-						<form class="flex-1 w-full space-y-4" id="waitlist-form">
-							<div class="grid grid-cols-2 gap-4">
-								<div class="space-y-1">
-									<label class="text-[10px] uppercase font-black text-primary tracking-widest px-1">Estado</label>
-									<input class="w-full bg-surface-container-high border-none rounded-lg text-on-surface-variant font-bold px-4 py-3 opacity-60" disabled type="text" value="Carabobo"/>
-								</div>
-								<div class="space-y-1">
-									<label class="text-[10px] uppercase font-black text-primary tracking-widest px-1">Ciudad</label>
-									<input class="w-full bg-surface-container-high border-none rounded-lg text-on-surface-variant font-bold px-4 py-3 opacity-60" disabled type="text" value="Puerto Cabello"/>
-								</div>
-							</div>
-							<div class="space-y-1">
-								<label class="text-[10px] uppercase font-black text-primary tracking-widest px-1">Teléfono</label>
-								<input class="w-full bg-surface-container-high border-none focus:ring-2 focus:ring-primary/30 rounded-lg text-on-surface px-4 py-3 placeholder:text-on-surface-variant/30" placeholder="0412-0000000" type="tel" id="phone" required/>
-							</div>
-							<div class="space-y-1">
-								<label class="text-[10px] uppercase font-black text-primary tracking-widest px-1">Correo Electrónico</label>
-								<input class="w-full bg-surface-container-high border-none focus:ring-2 focus:ring-primary/30 rounded-lg text-on-surface px-4 py-3 placeholder:text-on-surface-variant/30" placeholder="nombre@flashy.com" type="email" id="email" required/>
-							</div>
-							<button class="w-full mt-4 py-4 bg-[#ff6a00] hover:bg-primary text-on-primary font-headline font-black text-lg uppercase tracking-widest rounded-lg transition-all transform active:scale-[0.98] shadow-lg shadow-primary/20" type="submit">
-								Asegurar mi puesto
-							</button>
-						</form>
+						<ContactForm client:load />
 					</div>
 				</div>
 			</div>
@@ -338,32 +317,6 @@ import '../styles/global.css'
 						});
 					}
 				});
-			});
-
-			// Form submission handler
-			document.getElementById('waitlist-form').addEventListener('submit', function(e) {
-				e.preventDefault();
-				
-				const phone = document.getElementById('phone').value;
-				const email = document.getElementById('email').value;
-				
-				if (phone && email) {
-					// Show success message
-					const button = this.querySelector('button[type="submit"]');
-					const originalText = button.textContent;
-					button.textContent = '¡Registrado con éxito!';
-					button.classList.add('bg-green-600');
-					
-					// Reset form after 3 seconds
-					setTimeout(() => {
-						this.reset();
-						button.textContent = originalText;
-						button.classList.remove('bg-green-600');
-					}, 3000);
-					
-					// Here you would normally send the data to your backend
-					console.log('Registration:', { phone, email, state: 'Carabobo', city: 'Puerto Cabello' });
-				}
 			});
 
 			// Add parallax effect to hero section on scroll
