@@ -10,6 +10,18 @@ import '../styles/global.css'
 		<meta charset="utf-8"/>
 		<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 		<title>Flashy - Puerto Cabello</title>
+		<link href="/flashy-logo.jpg?v=3" rel="icon" type="image/jpeg" sizes="any"/>
+		<link href="/flashy-logo.jpg?v=3" rel="icon" type="image/jpeg" sizes="32x32"/>
+		<link href="/flashy-logo.jpg?v=3" rel="icon" type="image/jpeg" sizes="16x16"/>
+		<link href="/flashy-logo.jpg?v=3" rel="apple-touch-icon" sizes="180x180"/>
+		<meta content="Flashy - Puerto Cabello" property="og:title"/>
+		<meta content="Flashy: Más rápido, más seguro, más tuyo. La revolución del transporte diseñada para la costa carabobeña." property="og:description"/>
+		<meta content="/flashy-logo.jpg" property="og:image"/>
+		<meta content="website" property="og:type"/>
+		<meta content="summary_large_image" name="twitter:card"/>
+		<meta content="Flashy - Puerto Cabello" name="twitter:title"/>
+		<meta content="Flashy: Más rápido, más seguro, más tuyo. La revolución del transporte diseñada para la costa carabobeña." name="twitter:description"/>
+		<meta content="/flashy-logo.jpg" name="twitter:image"/>
 		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -100,7 +112,10 @@ import '../styles/global.css'
 		<!-- TopNavBar -->
 		<nav class="fixed top-0 w-full z-50 bg-[#0c0e0f]/80 backdrop-blur-md no-border bg-gradient-to-b from-[#0c0e0f] to-transparent shadow-[0_4px_30px_rgba(255,145,90,0.05)]">
 			<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-				<div class="text-2xl font-black italic tracking-tighter text-[#f6f6f7]">FLASHY</div>
+				<div class="flex items-center gap-3">
+					<img src="/flashy-logo.jpg" alt="Flashy Logo" class="w-8 h-8"/>
+					<div class="text-2xl font-black italic tracking-tighter text-[#f6f6f7]">FLASHY</div>
+				</div>
 				<div class="hidden md:flex items-center gap-8">
 					<a class="font-['Space_Grotesk'] tracking-tight text-sm font-bold uppercase text-[#ff915a] border-b-2 border-[#ff915a] pb-1" href="#">Puerto Cabello</a>
 					<a class="font-['Space_Grotesk'] tracking-tight text-sm font-bold uppercase text-[#aaabac] hover:text-[#f6f6f7] transition-colors" href="#features">Features</a>
@@ -291,7 +306,10 @@ import '../styles/global.css'
 		<!-- Footer -->
 		<footer class="bg-[#0c0e0f] w-full py-12 px-6 border-t border-[#464849]/15">
 			<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
-				<div class="text-lg font-bold text-[#f6f6f7]">FLASHY</div>
+				<div class="flex items-center gap-3 text-lg font-bold text-[#f6f6f7]">
+					<img src="/flashy-logo.jpg" alt="Flashy Logo" class="w-6 h-6"/>
+					FLASHY
+				</div>
 				<div class="flex flex-wrap justify-center gap-6">
 					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="#">Phase 1 Roadmap</a>
 					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="#">Privacy Policy</a>
