@@ -1,0 +1,233 @@
+---
+import '../styles/global.css'
+---
+
+<html class="dark" lang="es-VE">
+	<head>
+		<meta charset="utf-8"/>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+		<title>Política de Privacidad - Flashy</title>
+		<link href="/flashy-logo.jpg?v=3" rel="icon" type="image/jpeg" sizes="any"/>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+		<script id="tailwind-config">
+			tailwind.config = {
+				darkMode: "class",
+				theme: {
+					extend: {
+						colors: {
+							"surface-tint": "#ff915a",
+							"primary-fixed-dim": "#f76600",
+							"inverse-primary": "#a24100",
+							"surface-dim": "#0c0e0f",
+							"surface-variant": "#232628",
+							"secondary-fixed-dim": "#cad5ed",
+							"primary-fixed": "#ff7a31",
+							"on-tertiary-fixed-variant": "#604100",
+							"surface-container": "#171a1b",
+							"error-dim": "#d53d18",
+							"tertiary-fixed-dim": "#efa914",
+							"outline": "#747577",
+							"tertiary-container": "#ffb627",
+							"tertiary-fixed": "#ffb627",
+							"on-secondary": "#475266",
+							"primary-dim": "#ff7526",
+							"surface-container-low": "#111415",
+							"on-error-container": "#ffd2c8",
+							"surface-container-highest": "#232628",
+							"on-secondary-fixed-variant": "#515c70",
+							"surface-container-high": "#1d2021",
+							"error": "#ff7351",
+							"on-secondary-container": "#c5d1e8",
+							"on-primary": "#531e00",
+							"secondary-container": "#3c475a",
+							"primary-container": "#ff7a31",
+							"surface-container-lowest": "#000000",
+							"on-surface": "#f6f6f7",
+							"tertiary-dim": "#efa914",
+							"secondary-dim": "#cad5ed",
+							"background": "#0c0e0f",
+							"outline-variant": "#464849",
+							"on-primary-fixed": "#000000",
+							"tertiary": "#ffc96f",
+							"secondary": "#d8e3fb",
+							"secondary-fixed": "#d8e3fb",
+							"inverse-surface": "#f9f9fa",
+							"on-tertiary-fixed": "#3a2600",
+							"on-secondary-fixed": "#354053",
+							"on-tertiary": "#614100",
+							"error-container": "#b92902",
+							"on-error": "#450900",
+							"surface-bright": "#292d2e",
+							"primary": "#ff915a",
+							"on-surface-variant": "#aaabac",
+							"surface": "#0c0e0f",
+							"on-tertiary-container": "#553900",
+							"on-background": "#f6f6f7",
+							"inverse-on-surface": "#545556",
+							"on-primary-fixed-variant": "#501c00",
+							"on-primary-container": "#411500"
+						},
+						fontFamily: {
+							"headline": ["Space Grotesk"],
+							"body": ["Manrope"],
+							"label": ["Manrope"]
+						},
+						borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+					},
+				},
+			}
+		</script>
+        <style>
+            .policy-content h2 {
+                @apply font-headline text-3xl font-bold text-primary mt-12 mb-6 tracking-tight;
+            }
+            .policy-content h3 {
+                @apply font-headline text-xl font-bold text-on-surface mt-10 mb-6 flex items-center gap-3 pb-2 border-b border-outline-variant/20;
+            }
+            .policy-content p {
+                @apply text-on-surface-variant leading-relaxed mb-4 text-[15px];
+            }
+            .policy-content ul {
+                @apply space-y-6 mb-8;
+            }
+            .policy-content li {
+                @apply relative pl-8 text-on-surface-variant leading-relaxed text-[15px];
+            }
+            .policy-content li::before {
+                content: "";
+                @apply absolute left-0 top-[10px] w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(255,145,90,0.6)];
+            }
+            .policy-content strong {
+                @apply text-on-surface font-bold block mb-1;
+            }
+            .policy-content li strong {
+                @apply inline-block mb-0 mr-1;
+            }
+            .glass-card {
+                background: rgba(23, 26, 27, 0.4);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(70, 72, 73, 0.2);
+            }
+            .policy-content .highlight-box {
+                @apply bg-primary/5 border-l-4 border-primary p-4 my-6 rounded-r-lg italic text-on-surface;
+            }
+        </style>
+	</head>
+	<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+		<!-- TopNavBar -->
+		<nav class="fixed top-0 w-full z-50 bg-[#0c0e0f]/80 backdrop-blur-md no-border bg-gradient-to-b from-[#0c0e0f] to-transparent shadow-[0_4px_30px_rgba(255,145,90,0.05)]">
+			<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+				<a href="/" class="flex items-center gap-3">
+					<img src="/flashy-logo.jpg" alt="Flashy Logo" class="w-8 h-8 rounded-full"/>
+					<div class="text-2xl font-black italic tracking-tighter text-[#f6f6f7]">FLASHY</div>
+				</a>
+				<div class="hidden md:flex items-center gap-8">
+					<a class="font-['Space_Grotesk'] tracking-tight text-sm font-bold uppercase text-[#aaabac] hover:text-primary transition-colors" href="/">Inicio</a>
+				</div>
+				<a href="/#waitlist" class="bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-bold py-1.5 px-2.5 text-[10px] rounded-md uppercase tracking-wider md:py-2.5 md:px-6 md:text-xs md:rounded-lg active:scale-95 transform transition-transform duration-200 hover:opacity-80">
+					Acceso Prioritario
+				</a>
+			</div>
+		</nav>
+
+		<main class="relative pt-32 pb-24 px-6 overflow-hidden">
+            <!-- Background Decorations -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[radial-gradient(circle_at_center,_rgba(255,145,90,0.08)_0%,_transparent_70%)] pointer-events-none"></div>
+            
+			<div class="max-w-4xl mx-auto relative z-10">
+                <div class="mb-12 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                        <span class="material-symbols-outlined text-primary text-xs" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                        <span class="font-['Space_Grotesk'] font-bold text-[10px] tracking-widest uppercase text-primary">Seguridad y Privacidad</span>
+                    </div>
+                    <h1 class="font-headline text-4xl md:text-6xl font-black tracking-tighter text-on-surface mb-4">
+                        Política de <span class="text-primary italic">Privacidad</span>
+                    </h1>
+                    <p class="text-on-surface-variant font-medium">Última actualización: 22 de abril de 2026</p>
+                </div>
+
+                <div class="glass-card p-8 md:p-12 rounded-2xl policy-content">
+                    <p class="text-lg">En <strong>Flashy</strong>, respetamos tu privacidad y estamos comprometidos a proteger tus datos personales. Esta Política de Privacidad explica cómo recopilamos, utilizamos, compartimos y protegemos tu información cuando utilizas nuestra plataforma para solicitar o prestar servicios de transporte.</p>
+
+                    <h3>1. Información que recopilamos</h3>
+                    <p>Para que la plataforma funcione correctamente, recopilamos los siguientes tipos de información:</p>
+                    
+                    <p><strong>A. Información Personal (Cuenta y Contacto)</strong></p>
+                    <ul>
+                        <li><strong>Número de teléfono y Correo electrónico:</strong> Los requerimos para crear tu cuenta, verificar tu identidad (mediante SMS/Email), enviarte recibos de los viajes y contactarte en caso de soporte o emergencias.</li>
+                        <li><strong>Nombre y Apellido:</strong> Para que los conductores y pasajeros puedan identificarse mutuamente al momento de iniciar un viaje.</li>
+                    </ul>
+
+                    <p><strong>B. Datos de Ubicación (Solo en uso)</strong></p>
+                    <ul>
+                        <li><strong>Ubicación precisa (GPS):</strong> Recopilamos datos de ubicación exacta de tu dispositivo para conectar a pasajeros con conductores cercanos, calcular rutas, estimar tiempos de llegada y tarifas, y hacer seguimiento del viaje por seguridad.</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Solo cuando la app está en uso:</strong> La aplicación solo accede a tu ubicación cuando está abierta y visible en la pantalla (en primer plano). <strong>No recopilamos ni rastreamos tu ubicación en segundo plano</strong> (cuando la app está cerrada o minimizada).
+                    </div>
+
+                    <p><strong>C. Cámara, Galería y Documentos (Verificación)</strong></p>
+                    <ul>
+                        <li><strong>Fotos de Perfil:</strong> Requerimos que subas una fotografía de tu rostro para la seguridad y confianza de la comunidad.</li>
+                        <li><strong>Documentos Oficiales:</strong> Especialmente para los conductores, solicitamos fotos de la cédula/DNI, licencia de conducir, registro del vehículo y seguro. Estas imágenes se utilizan estrictamente para validar la identidad y antecedentes de los operadores de la plataforma.</li>
+                    </ul>
+
+                    <h3>2. Cómo utilizamos tu información</h3>
+                    <p>Utilizamos los datos recopilados exclusivamente para:</p>
+                    <ul>
+                        <li>Facilitar el servicio de transporte, conectando pasajeros con conductores en tiempo real.</li>
+                        <li>Procesar pagos y emitir recibos de manera segura.</li>
+                        <li>Brindar soporte técnico y atención al cliente personalizada.</li>
+                        <li>Mejorar la seguridad de la plataforma, previniendo fraudes y verificando la identidad de los usuarios.</li>
+                        <li>Cumplir con las obligaciones legales y de tránsito aplicables.</li>
+                    </ul>
+
+                    <h3>3. Cómo compartimos tu información</h3>
+                    <p>No vendemos ni comercializamos tus datos personales. Tu información solo se comparte en las siguientes circunstancias:</p>
+                    <ul>
+                        <li><strong>Entre usuarios:</strong> Durante un viaje activo, el pasajero verá el nombre, foto de perfil y detalles del vehículo del conductor. El conductor verá el nombre, foto de perfil y ubicación de recogida/destino del pasajero.</li>
+                        <li><strong>Por motivos legales:</strong> Podemos compartir información con autoridades gubernamentales o policiales si es requerido por ley o para investigar incidentes de seguridad durante un viaje.</li>
+                    </ul>
+
+                    <h3>4. Seguridad de los Datos</h3>
+                    <p>Tus datos, incluyendo las fotografías de documentos y ubicación, se transmiten de forma encriptada a nuestros servidores. Los documentos de identidad no son públicos y solo son accesibles por nuestro equipo interno de validación.</p>
+
+                    <h3>5. Retención y Eliminación de Datos</h3>
+                    <p>Conservaremos tus datos mientras tu cuenta esté activa para garantizar la continuidad del servicio.</p>
+                    <p><strong>Tu derecho a eliminar los datos:</strong> Tienes el derecho de solicitar la eliminación de tu cuenta y de todos los datos asociados (fotos, historial de viajes, datos de contacto). Para hacerlo, puedes solicitar la eliminación directamente desde el menú de configuración de la app, o enviando un correo a <strong style="display: inline;">contacto@flashygo.com</strong>.</p>
+
+                    <h3>6. Cambios a esta Política</h3>
+                    <p>Podemos actualizar esta política periódicamente. Te notificaremos sobre cambios significativos a través de un aviso en la aplicación o por correo electrónico.</p>
+
+                    <h3>7. Contacto</h3>
+                    <p>Si tienes alguna duda sobre el manejo de tus datos o esta política, contáctanos en:</p>
+                    <ul class="!space-y-2">
+                        <li><strong>Correo electrónico:</strong> contacto@flashygo.com</li>
+                        <li><strong>Desarrollador / Responsable:</strong> José Parra</li>
+                    </ul>
+                </div>
+            </div>
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-[#0c0e0f] w-full py-12 px-6 border-t border-[#464849]/15">
+			<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+				<a href="/" class="flex items-center gap-3 text-lg font-bold text-[#f6f6f7]">
+					<img src="/flashy-logo.jpg" alt="Flashy Logo" class="w-6 h-6 rounded-full"/>
+					FLASHY
+				</a>
+				<div class="flex flex-wrap justify-center gap-6">
+					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="/#features">Phase 1 Roadmap</a>
+					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-primary font-bold" href="/politica-de-privacidad">Privacy Policy</a>
+					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="#">Terms of Service</a>
+					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="#">Driver Portal</a>
+				</div>
+				<p class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] text-center md:text-right">
+					2024 FLASHY VENEZUELA. KINETIC PRECISION ENGINEERED.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>
