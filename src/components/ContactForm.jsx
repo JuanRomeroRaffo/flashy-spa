@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+const VALID_CUPONS = ['MILHOJASVALENCIA'];
+
 function InterestCard({ value, label, icon, selected, onClick }) {
   return (
     <button
@@ -22,7 +24,7 @@ function InterestCard({ value, label, icon, selected, onClick }) {
   );
 }
 
-function ContactForm() {
+function ContactForm({ cupon }) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -30,6 +32,8 @@ function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [succeeded, setSucceeded] = useState(false);
   const [error, setError] = useState('');
+
+  const validCupon = cupon && VALID_CUPONS.includes(cupon.toUpperCase()) ? cupon.toUpperCase() : null;
 
   const inputClass = "w-full bg-surface-container-high border-none focus:ring-2 focus:ring-primary/30 rounded-lg text-on-surface px-4 py-3 placeholder:text-on-surface-variant/30 outline-none transition-all";
   const labelClass = "text-[10px] uppercase font-black text-primary tracking-widest px-1";
@@ -43,10 +47,14 @@ function ContactForm() {
     setError('');
     setSubmitting(true);
     try {
+      const payload = { name, phone, email, interest };
+      if (validCupon) {
+        payload.cupon = validCupon;
+      }
       const res = await fetch('/api/contacts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, email, interest }),
+        body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error('Error al enviar');
       setSucceeded(true);
@@ -58,6 +66,44 @@ function ContactForm() {
   }
 
   if (succeeded) {
+    if (validCupon) {
+      return (
+        <div className="flex-1 w-full text-center">
+          <div
+            className="rounded-xl p-6 mb-4"
+            style={{
+              background: 'linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(255,182,39,0.08) 100%)',
+              border: '1px solid rgba(34,197,94,0.35)',
+            }}
+          >
+            <div className="text-3xl mb-2">🎉✅🎉</div>
+            <h3 className="font-headline font-black text-lg mb-2" style={{ color: '#4ade80' }}>
+              ¡Pre-registro con cupón exitoso!
+            </h3>
+            <p className="text-sm mb-3" style={{ color: '#86efac' }}>
+              Tu cupón <strong className="font-mono" style={{ color: '#ffb627' }}>{validCupon}</strong> fue aplicado correctamente.
+            </p>
+            <div
+              className="rounded-lg p-3"
+              style={{
+                background: 'rgba(255,182,39,0.08)',
+                border: '1px solid rgba(255,182,39,0.20)',
+              }}
+            >
+              <p className="text-sm font-medium" style={{ color: '#e0c88a' }}>
+                Al registrarte en la app, tu{' '}
+                <strong style={{ color: '#ffb627' }}>descuento del 50%</strong>{' '}
+                estará activo automáticamente. ¡No tienes que hacer nada más!
+              </p>
+            </div>
+          </div>
+          <p className="text-on-surface-variant text-sm">
+            Te contactaremos pronto con los detalles de tu acceso prioritario.
+          </p>
+        </div>
+      );
+    }
+
     return (
       <div className="flex-1 w-full text-center">
         <div className="bg-green-600/20 border border-green-600/50 rounded-xl p-6 mb-4">
@@ -142,7 +188,7 @@ function ContactForm() {
         type="submit"
         disabled={submitting || !interest}
       >
-        {submitting ? 'Enviando...' : 'Asegurar mi puesto'}
+        {submitting ? 'Enviando...' : validCupon ? '🎟️ Canjear cupón y asegurar mi puesto' : 'Asegurar mi puesto'}
       </button>
     </form>
   );
