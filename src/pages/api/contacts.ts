@@ -26,6 +26,7 @@ export const POST: APIRoute = async ({ request }) => {
       phone: body.phone,
       email: body.email,
       interest: body.interest,
+      ...(body.cupon ? { cupon: body.cupon } : {}),
     }),
   });
 
