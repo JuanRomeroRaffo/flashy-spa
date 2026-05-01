@@ -4,7 +4,7 @@ import UmamiAnalytics from '../../components/UmamiAnalytics.astro';
 export const prerender = false;
 
 const { code } = Astro.params;
-const directusUrl = import.meta.env.PUBLIC_DIRECTUS_URL;
+const directusUrl = import.meta.env.DIRECTUS_URL ?? import.meta.env.PUBLIC_DIRECTUS_URL;
 const directusToken = import.meta.env.DIRECTUS_TOKEN;
 
 let coupon: any = null;

@@ -13,14 +13,13 @@ RUN npm ci --include=dev --legacy-peer-deps && \
 
 # ---- Build ----
 FROM base AS build
-# PUBLIC_* deben pasarse como ARG: Astro las inyecta en el bundle al compilar.
-ARG PUBLIC_DIRECTUS_URL
+# PUBLIC_* client-visible vars must be baked in at build time.
+# DIRECTUS_URL is server-only and injected at runtime (no ARG needed).
 ARG PUBLIC_REGISTERED_COUNT=300
 ARG PUBLIC_AVAILABLE_SPOTS=700
 ARG PUBLIC_UMAMI_SCRIPT_URL
 ARG PUBLIC_UMAMI_WEBSITE_ID
-ENV PUBLIC_DIRECTUS_URL=$PUBLIC_DIRECTUS_URL \
-    PUBLIC_REGISTERED_COUNT=$PUBLIC_REGISTERED_COUNT \
+ENV PUBLIC_REGISTERED_COUNT=$PUBLIC_REGISTERED_COUNT \
     PUBLIC_AVAILABLE_SPOTS=$PUBLIC_AVAILABLE_SPOTS \
     PUBLIC_UMAMI_SCRIPT_URL=$PUBLIC_UMAMI_SCRIPT_URL \
     PUBLIC_UMAMI_WEBSITE_ID=$PUBLIC_UMAMI_WEBSITE_ID
@@ -48,5 +47,5 @@ COPY --from=build /app/dist ./dist
 USER app
 EXPOSE 4321
 
-# DIRECTUS_TOKEN y demás secretos se inyectan en runtime (-e o env_file)
+# DIRECTUS_URL, DIRECTUS_TOKEN y demás secretos se inyectan en runtime (-e o env_file)
 CMD ["node", "./dist/server/entry.mjs"]
