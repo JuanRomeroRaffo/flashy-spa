@@ -19,8 +19,8 @@ export const POST: APIRoute = async ({ request }) => {
     });
   }
 
-  const directusUrl = import.meta.env.DIRECTUS_URL ?? import.meta.env.PUBLIC_DIRECTUS_URL;
-  const directusToken = import.meta.env.DIRECTUS_TOKEN;
+  const directusUrl = process.env.DIRECTUS_URL ?? process.env.PUBLIC_DIRECTUS_URL ?? import.meta.env.PUBLIC_DIRECTUS_URL;
+  const directusToken = process.env.DIRECTUS_TOKEN ?? import.meta.env.DIRECTUS_TOKEN;
 
   const payload: any = {
     name: body.name,
