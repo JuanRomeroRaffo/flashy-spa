@@ -1,15 +1,6 @@
 ---
-/**
- * UmamiAnalytics
- * Inyecta el script de Umami si las variables de entorno están definidas.
- * Usar dentro del <head> de cualquier página o layout.
- *
- * Variables requeridas en .env:
- *   PUBLIC_UMAMI_SCRIPT_URL  → URL del script (ej. https://umami.sitio.com/script.js)
- *   PUBLIC_UMAMI_WEBSITE_ID  → ID del sitio en Umami
- */
-const scriptUrl  = import.meta.env.PUBLIC_UMAMI_SCRIPT_URL;
-const websiteId  = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+const scriptUrl = process.env.PUBLIC_UMAMI_SCRIPT_URL ?? import.meta.env.PUBLIC_UMAMI_SCRIPT_URL;
+const websiteId = process.env.PUBLIC_UMAMI_WEBSITE_ID ?? import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
 ---
 
 {scriptUrl && websiteId && (
