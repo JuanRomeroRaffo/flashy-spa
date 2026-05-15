@@ -84,13 +84,13 @@ function PriorityAccessForm() {
   }
 
   async function handleDownload() {
-    if (!downloadEnabled || !recordId) return;
+    if (!downloadEnabled || !email) return;
 
     try {
       await fetch('/api/launch-users', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: recordId }),
+        body: JSON.stringify({ email }),
       });
     } catch (err) {
       console.error('Error updating registered status:', err);
