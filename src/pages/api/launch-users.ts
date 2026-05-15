@@ -45,9 +45,22 @@ export const POST: APIRoute = async ({ request }) => {
     });
   }
 
-  const data = await res.json();
+  const responseText = await res.text();
+  let data;
+  console.log(responseText);
+  try {
+    data = JSON.parse(responseText);
+  } catch {
+    console.error('Directus response not JSON:', responseText);
+    return new Response(JSON.stringify({ error: 'Respuesta inesperada del servidor.' }), {
+      status: 502,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
 
-  return new Response(JSON.stringify({ message: 'Registro exitoso', id: data.data.id }), {
+  const recordId = data?.data?.id ?? data?.id;
+
+  return new Response(JSON.stringify({ message: 'Registro exitoso', id: recordId }), {
     status: 201,
     headers: { 'Content-Type': 'application/json' },
   });

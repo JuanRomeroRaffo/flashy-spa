@@ -167,140 +167,6 @@ const availableSpots = import.meta.env.PUBLIC_AVAILABLE_SPOTS || '700';
 </head>
 <body>
 
-<html class="dark" lang="es-VE">
-	<head>
-		<meta charset="utf-8"/>
-		<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-		<title>Flashy - Puerto Cabello</title>
-		<link href="/flashy-logo.jpg?v=3" rel="icon" type="image/jpeg" sizes="any"/>
-		<link href="/flashy-logo.jpg?v=3" rel="icon" type="image/jpeg" sizes="32x32"/>
-		<link href="/flashy-logo.jpg?v=3" rel="icon" type="image/jpeg" sizes="16x16"/>
-		<link href="/flashy-logo.jpg?v=3" rel="apple-touch-icon" sizes="180x180"/>
-		<meta content="Flashy - Puerto Cabello" property="og:title"/>
-		<meta content="Flashy: Más rápido, más seguro, más tuyo. La revolución del transporte diseñada para la costa carabobeña." property="og:description"/>
-		<meta content="/flashy-logo.jpg" property="og:image"/>
-		<meta content="website" property="og:type"/>
-		<meta content="summary_large_image" name="twitter:card"/>
-		<meta content="Flashy - Puerto Cabello" name="twitter:title"/>
-		<meta content="Flashy: Más rápido, más seguro, más tuyo. La revolución del transporte diseñada para la costa carabobeña." name="twitter:description"/>
-		<meta content="/flashy-logo.jpg" name="twitter:image"/>
-		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-		<script id="tailwind-config">
-			tailwind.config = {
-				darkMode: "class",
-				theme: {
-					extend: {
-						colors: {
-							"surface-tint": "#ff915a",
-							"primary-fixed-dim": "#f76600",
-							"inverse-primary": "#a24100",
-							"surface-dim": "#0c0e0f",
-							"surface-variant": "#232628",
-							"secondary-fixed-dim": "#cad5ed",
-							"primary-fixed": "#ff7a31",
-							"on-tertiary-fixed-variant": "#604100",
-							"surface-container": "#171a1b",
-							"error-dim": "#d53d18",
-							"tertiary-fixed-dim": "#efa914",
-							"outline": "#747577",
-							"tertiary-container": "#ffb627",
-							"tertiary-fixed": "#ffb627",
-							"on-secondary": "#475266",
-							"primary-dim": "#ff7526",
-							"surface-container-low": "#111415",
-							"on-error-container": "#ffd2c8",
-							"surface-container-highest": "#232628",
-							"on-secondary-fixed-variant": "#515c70",
-							"surface-container-high": "#1d2021",
-							"error": "#ff7351",
-							"on-secondary-container": "#c5d1e8",
-							"on-primary": "#531e00",
-							"secondary-container": "#3c475a",
-							"primary-container": "#ff7a31",
-							"surface-container-lowest": "#000000",
-							"on-surface": "#f6f6f7",
-							"tertiary-dim": "#efa914",
-							"secondary-dim": "#cad5ed",
-							"background": "#0c0e0f",
-							"outline-variant": "#464849",
-							"on-primary-fixed": "#000000",
-							"tertiary": "#ffc96f",
-							"secondary": "#d8e3fb",
-							"secondary-fixed": "#d8e3fb",
-							"inverse-surface": "#f9f9fa",
-							"on-tertiary-fixed": "#3a2600",
-							"on-secondary-fixed": "#354053",
-							"on-tertiary": "#614100",
-							"error-container": "#b92902",
-							"on-error": "#450900",
-							"surface-bright": "#292d2e",
-							"primary": "#ff915a",
-							"on-surface-variant": "#aaabac",
-							"surface": "#0c0e0f",
-							"on-tertiary-container": "#553900",
-							"on-background": "#f6f6f7",
-							"inverse-on-surface": "#545556",
-							"on-primary-fixed-variant": "#501c00",
-							"on-primary-container": "#411500"
-						},
-						fontFamily: {
-							"headline": ["Space Grotesk"],
-							"body": ["Manrope"],
-							"label": ["Manrope"]
-						},
-						borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-					},
-				},
-			}
-		</script>
-		<style>
-			.material-symbols-outlined {
-				font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-			}
-			.glow-badge {
-				box-shadow: 0 0 20px rgba(255, 145, 90, 0.4);
-			}
-			.bento-card:hover {
-				background-color: #232628;
-				transform: translateY(-4px);
-				transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-			}
-			@keyframes cupon-entrance {
-				from { opacity: 0; transform: translateY(-20px) scale(0.95); }
-				to { opacity: 1; transform: translateY(0) scale(1); }
-			}
-			@keyframes cupon-shimmer {
-				0%, 100% { transform: translateX(-100%); }
-				50% { transform: translateX(100%); }
-			}
-			@keyframes cupon-bounce {
-				from { transform: scale(1) rotate(-5deg); }
-				to { transform: scale(1.15) rotate(5deg); }
-			}
-		</style>
-	</head>
-	<body class="bg-background text-on-surface font-body selection:bg-primary/30">
-		<!-- TopNavBar -->
-		<nav class="fixed top-0 w-full z-50 bg-[#0c0e0f]/80 backdrop-blur-md no-border bg-gradient-to-b from-[#0c0e0f] to-transparent shadow-[0_4px_30px_rgba(255,145,90,0.05)]">
-			<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-				<div class="flex items-center gap-3">
-					<img src="/flashy-logo.jpg" alt="Flashy Logo" class="w-8 h-8"/>
-					<div class="text-2xl font-black italic tracking-tighter text-[#f6f6f7]">FLASHY</div>
-				</div>
-				<div class="hidden md:flex items-center gap-8">
-					<a class="font-['Space_Grotesk'] tracking-tight text-sm font-bold uppercase text-[#ff915a] border-b-2 border-[#ff915a] pb-1" href="#">Puerto Cabello</a>
-					<a class="font-['Space_Grotesk'] tracking-tight text-sm font-bold uppercase text-[#aaabac] hover:text-[#f6f6f7] transition-colors" href="#features">Features</a>
-					<a class="font-['Space_Grotesk'] tracking-tight text-sm font-bold uppercase text-[#aaabac] hover:text-[#f6f6f7] transition-colors" href="#waitlist">Waitlist</a>
-					<a class="font-['Space_Grotesk'] tracking-tight text-sm font-bold uppercase text-[#aaabac] hover:text-[#f6f6f7] transition-colors" href="/acceso-prioritario">Acceso Prioritario</a>
-				</div>
-				<a href="/acceso-prioritario" class="bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-bold py-1.5 px-2.5 text-[10px] rounded-md uppercase tracking-wider md:py-2.5 md:px-6 md:text-xs md:rounded-lg active:scale-95 transform transition-transform duration-200 hover:opacity-80 animate-pulse">
-					Acceso Prioritario
-				</a>
-			</div>
-		</nav>
 <nav id="main-nav" aria-label="Navegación principal">
   <div class="nav-inner container">
     <div class="nav-brand">
@@ -311,6 +177,7 @@ const availableSpots = import.meta.env.PUBLIC_AVAILABLE_SPOTS || '700';
       <a href="#servicios">Servicios</a>
       <a href="#seguridad">Seguridad</a>
       <a href="#faq">FAQ</a>
+      <a href="/acceso-prioritario">Acceso Prioritario</a>
     </div>
     <div class="nav-actions">
       <button class="btn-primary btn-sm nav-cta-desktop" data-scroll-form="pasajero">Únete →</button>
@@ -328,6 +195,7 @@ const availableSpots = import.meta.env.PUBLIC_AVAILABLE_SPOTS || '700';
   <a href="#servicios" class="nav-mobile-link">Servicios</a>
   <a href="#seguridad" class="nav-mobile-link">Seguridad</a>
   <a href="#faq" class="nav-mobile-link">FAQ</a>
+  <a href="/acceso-prioritario" class="nav-mobile-link">Acceso Prioritario</a>
   <button class="btn-primary btn-full" style="margin-top:12px" data-scroll-form="pasajero">Únete →</button>
 </div>
 
@@ -394,25 +262,6 @@ const availableSpots = import.meta.env.PUBLIC_AVAILABLE_SPOTS || '700';
       </div>
     </div>
 
-		<!-- Footer -->
-		<footer class="bg-[#0c0e0f] w-full py-12 px-6 border-t border-[#464849]/15">
-			<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
-				<div class="flex items-center gap-3 text-lg font-bold text-[#f6f6f7]">
-					<img src="/flashy-logo.jpg" alt="Flashy Logo" class="w-6 h-6"/>
-					FLASHY
-				</div>
-				<div class="flex flex-wrap justify-center gap-6">
-					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="#">Phase 1 Roadmap</a>
-					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="/politica-de-privacidad">Privacy Policy</a>
-					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="#">Terms of Service</a>
-					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="#">Driver Portal</a>
-					<a class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] hover:text-[#ff915a] transition-colors duration-300" href="/acceso-prioritario">Acceso Prioritario</a>
-				</div>
-				<p class="font-['Manrope'] text-[10px] tracking-[0.05em] uppercase text-[#aaabac] text-center md:text-right">
-					2024 FLASHY VENEZUELA. KINETIC PRECISION ENGINEERED.
-				</p>
-			</div>
-		</footer>
     <div class="phone-wrap">
       <div class="phone-shell">
         <div class="phone-notch"></div>
@@ -829,6 +678,7 @@ const availableSpots = import.meta.env.PUBLIC_AVAILABLE_SPOTS || '700';
       <a href="#servicios" class="footer-link">Servicios</a>
       <a href="#seguridad" class="footer-link">Seguridad</a>
       <a href="#faq" class="footer-link">FAQ</a>
+      <a href="/acceso-prioritario" class="footer-link">Acceso Prioritario</a>
       <a href="/politica-de-privacidad" class="footer-link">Política de Privacidad</a>
     </div>
     <div>
