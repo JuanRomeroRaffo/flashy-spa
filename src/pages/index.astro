@@ -6,8 +6,7 @@ if (cuponParam) {
   return Astro.redirect(`/cupon/${encodeURIComponent(cuponParam)}`, 302);
 }
 
-const registeredCount = import.meta.env.PUBLIC_REGISTERED_COUNT || '300';
-const availableSpots = import.meta.env.PUBLIC_AVAILABLE_SPOTS || '700';
+return Astro.redirect('https://flashygo.com/acceso-prioritario', 302);
 ---
 <html lang="es">
 <head>
