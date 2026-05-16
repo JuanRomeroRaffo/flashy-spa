@@ -1,7 +1,7 @@
 ---
 import UmamiAnalytics from '../components/UmamiAnalytics.astro';
 
-const downloadUrl = import.meta.env.PUBLIC_DOWNLOAD_URL || '#';
+const downloadUrl = process.env.PUBLIC_DOWNLOAD_URL || '#';
 
 // Fetch registered users count from Directus
 const directusUrl = process.env.DIRECTUS_URL ?? process.env.PUBLIC_DIRECTUS_URL ?? import.meta.env.PUBLIC_DIRECTUS_URL;
